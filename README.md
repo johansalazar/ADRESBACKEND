@@ -21,7 +21,7 @@ del API.
 -   Persistencia en archivo JSONL
 -   Repositorios basados en puertos/adaptadores
 
-### Frontend (Angular 17)
+### Frontend (Angular 21)
 
 -   Angular Standalone Components
 -   Servicios basados en Hexagonal Ports
