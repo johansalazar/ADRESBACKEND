@@ -28,7 +28,7 @@
 ## Archivos de logs
 *.log
 
-## Archivos de configuración locales
+## Archivos de configuraciï¿½n locales
 *.vsconfig
 *.local
 
@@ -72,3 +72,6 @@ Desktop.ini
 App_Data/
 wwwroot/lib/
 *.Publish.xml
+/Adq.Backend.Api/.vs
+*.cache
+*.cache
