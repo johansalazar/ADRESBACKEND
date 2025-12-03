@@ -218,4 +218,4 @@ Ejemplo:
 
 # ✨ Autor
 
-Generado automáticamente por Johan Ivan Salazar Santana.
+Johan Ivan Salazar Santana.
