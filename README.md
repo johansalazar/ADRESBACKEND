@@ -16,6 +16,8 @@ del API.
 -   Swagger/OpenAPI
 -   Inyección de dependencias
 -   Arquitectura Hexagonal
+-   Persistencia en SQL Server (vía Entity Framework Core)
+-   Migraciones de Entity Framework Core
 -   Persistencia en archivo JSONL
 -   Repositorios basados en puertos/adaptadores
 
@@ -31,16 +33,20 @@ del API.
 # 📁 Estructura del Proyecto
 
     adquisiciones-app/
-      backend/
-        Adq.Backend.Api/
-          Controllers/
-          Application/
-          Domain/
-          Ports/
-          Adapters/
-          Program.cs
-        data/
-          acquisitions.jsonl
+  backend/
+    Adq.Backend.Api/
+      Controllers/
+      Application/
+      Domain/
+      Ports/
+    Adq.Backend.Infrastructure/  
+      Persistence/
+        EFCore/
+          Migrations/           
+          SqlServerAcquisitionRepository.cs
+          AcquisitionDbContext.cs
+    data/
+      acquisitions.jsonl
       frontend/
         src/
           app/
@@ -57,29 +63,29 @@ del API.
 
 ## 🟦 Diagrama General
 
-                     +---------------------------+
-                     |        FRONTEND          |
-                     |   Angular (Puertos)      |
-                     +-----------+---------------+
-                                 |
-                                 | HTTP REST
-                                 v
-                    +------------+--------------+
-                    |         API (.NET 8)      |
-                    | Controllers (Entradas)    |
-                    +------------+--------------+
-                                 |
-                          Aplicación (Casos de Uso)
-                                 |
-                     +-----------+------------+
-                     |        Dominio         |
-                     |  Entidades + Reglas    |
-                     +-----------+------------+
-                                 |
-                    +------------+------------+
-                    | Adaptadores de Persist. |
-                    |  Archivo JSONL          |
-                    +--------------------------+
+             +---------------------------+
+             |        FRONTEND          |
+             |   Angular (Puertos)      |
+             +-----------+---------------+
+                         |
+                         | HTTP REST
+                         v
+            +------------+--------------+
+            |         API (.NET 8)      |
+            | Controllers (Entradas)    |
+            +------------+--------------+
+                         |
+                  Aplicación (Casos de Uso)
+                         |
+             +-----------+------------+
+             |        Dominio         |
+             |  Entidades + Reglas    |
+             +-----------+------------+
+                         |
+            +------------+------------+
+            | Adaptador de Persistencia|
+            |  **EF Core/SQL Server** |
+            +--------------------------+
 
 ------------------------------------------------------------------------
 
@@ -117,6 +123,12 @@ del API.
     | Adaptador Archivo JSONL   |
     | (Infraestructura)         |
     +---------------------------+
+    +-------------+-------------+
+    | Adaptador EF Core/SQL S.  |
+    | (Infraestructura)         |
+    | **AcquisitionDbContext** |
+    | **Migrations** |
+    +---------------------------+
 
 ------------------------------------------------------------------------
 
@@ -152,6 +164,30 @@ Secuencia:
     cd backend/Adq.Backend.Api
     dotnet restore
     dotnet run
+Backend (SQL Server/EF Core)
+Configuración de Conexión: Asegúrese de que el archivo appsettings.json en Adq.Backend.Api contiene la cadena de conexión a su instancia de SQL Server.
+
+JSON
+
+{
+  "ConnectionStrings": {
+    "AcquisitionsDb": "Server=(localdb)\\mssqllocaldb;Database=ADRES;Trusted_Connection=True;MultipleActiveResultSets=true"
+  }
+  // ... otros ajustes
+}
+Ejecutar Migraciones: Para crear o actualizar la estructura de la base de datos SQL Server, ejecute los comandos de EF Core.
+
+Añadir Migración Inicial: (Solo la primera vez, si el proyecto es nuevo)
+
+Bash
+
+dotnet ef migrations add InitialCreate --project ../Adq.Backend.Infrastructure
+Aplicar Migraciones: (Para actualizar la base de datos)
+
+Bash
+
+cd backend/Adq.Backend.Api
+dotnet ef database update --project ../Adq.Backend.Infrastructure
 
 Swagger:
 
