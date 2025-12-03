@@ -1,33 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Api\\",
+  "WorkspaceRootPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7A0C6D62-538B-F363-2A42-B928316EA415}|..\\Adq.Backend.Infrastructure\\Adq.Backend.Infrastructure.csproj|c:\\users\\sirgohan\\source\\repos\\adquisicionesapp\\adq.backend.infrastructure\\data\\acquisitions.jsonl||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|Solution Items{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Api\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|Solution Items{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D2B1FF4-A13B-E372-E79D-C3DC58722AAA}|Adq.Backend.Api.csproj|c:\\users\\sirgohan\\source\\repos\\adquisicionesapp\\adq.backend.api\\controllers\\acquisitioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3D2B1FF4-A13B-E372-E79D-C3DC58722AAA}|Adq.Backend.Api.csproj|c:\\users\\sirgohan\\source\\repos\\adquisicionesapp\\adresbackend\\adq.backend.api\\controllers\\acquisitioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3D2B1FF4-A13B-E372-E79D-C3DC58722AAA}|Adq.Backend.Api.csproj|solutionrelative:controllers\\acquisitioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D2B1FF4-A13B-E372-E79D-C3DC58722AAA}|Adq.Backend.Api.csproj|c:\\users\\sirgohan\\source\\repos\\adquisicionesapp\\adq.backend.api\\application\\services\\acquisitionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D2B1FF4-A13B-E372-E79D-C3DC58722AAA}|Adq.Backend.Api.csproj|solutionrelative:application\\services\\acquisitionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D2B1FF4-A13B-E372-E79D-C3DC58722AAA}|Adq.Backend.Api.csproj|c:\\users\\sirgohan\\source\\repos\\adquisicionesapp\\adq.backend.api\\application\\dto\\acquisitioncreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D2B1FF4-A13B-E372-E79D-C3DC58722AAA}|Adq.Backend.Api.csproj|solutionrelative:application\\dto\\acquisitioncreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D2B1FF4-A13B-E372-E79D-C3DC58722AAA}|Adq.Backend.Api.csproj|c:\\users\\sirgohan\\source\\repos\\adquisicionesapp\\adq.backend.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D2B1FF4-A13B-E372-E79D-C3DC58722AAA}|Adq.Backend.Api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D2B1FF4-A13B-E372-E79D-C3DC58722AAA}|Adq.Backend.Api.csproj|c:\\users\\sirgohan\\source\\repos\\adquisicionesapp\\adq.backend.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{3D2B1FF4-A13B-E372-E79D-C3DC58722AAA}|Adq.Backend.Api.csproj|c:\\users\\sirgohan\\source\\repos\\adquisicionesapp\\adresbackend\\adq.backend.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{3D2B1FF4-A13B-E372-E79D-C3DC58722AAA}|Adq.Backend.Api.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D2B1FF4-A13B-E372-E79D-C3DC58722AAA}|Adq.Backend.Api.csproj|c:\\users\\sirgohan\\source\\repos\\adquisicionesapp\\adq.backend.api\\application\\dto\\acquisitionupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D2B1FF4-A13B-E372-E79D-C3DC58722AAA}|Adq.Backend.Api.csproj|solutionrelative:application\\dto\\acquisitionupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3D2B1FF4-A13B-E372-E79D-C3DC58722AAA}|Adq.Backend.Api.csproj|c:\\users\\sirgohan\\source\\repos\\adquisicionesapp\\adresbackend\\adq.backend.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D2B1FF4-A13B-E372-E79D-C3DC58722AAA}|Adq.Backend.Api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -126,88 +115,54 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "acquisitions.jsonl",
-              "DocumentMoniker": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Infrastructure\\data\\acquisitions.jsonl",
-              "RelativeDocumentMoniker": "..\\Adq.Backend.Infrastructure\\data\\acquisitions.jsonl",
-              "ToolTip": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Infrastructure\\data\\acquisitions.jsonl",
-              "RelativeToolTip": "..\\Adq.Backend.Infrastructure\\data\\acquisitions.jsonl",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Api\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Api\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAABcAAAAAAAAAAAAwwC0AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-03T05:58:32.495Z",
+              "WhenOpened": "2025-12-03T14:49:05.967Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "AcquisitionController.cs",
-              "DocumentMoniker": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Api\\Controllers\\AcquisitionController.cs",
+              "DocumentMoniker": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Api\\Controllers\\AcquisitionController.cs",
               "RelativeDocumentMoniker": "Controllers\\AcquisitionController.cs",
-              "ToolTip": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Api\\Controllers\\AcquisitionController.cs",
+              "ToolTip": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Api\\Controllers\\AcquisitionController.cs",
               "RelativeToolTip": "Controllers\\AcquisitionController.cs",
-              "ViewState": "AgIAAKYAAAAAAAAAAAAmwLoAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T03:13:26.78Z",
+              "WhenOpened": "2025-12-03T14:45:47.822Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AcquisitionService.cs",
-              "DocumentMoniker": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Api\\Application\\Services\\AcquisitionService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\AcquisitionService.cs",
-              "ToolTip": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Api\\Application\\Services\\AcquisitionService.cs",
-              "RelativeToolTip": "Application\\Services\\AcquisitionService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T03:12:48.87Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AcquisitionUpdateDto.cs",
-              "DocumentMoniker": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Api\\Application\\Dto\\AcquisitionUpdateDto.cs",
-              "RelativeDocumentMoniker": "Application\\Dto\\AcquisitionUpdateDto.cs",
-              "ToolTip": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Api\\Application\\Dto\\AcquisitionUpdateDto.cs",
-              "RelativeToolTip": "Application\\Dto\\AcquisitionUpdateDto.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAABBwBAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T03:12:33.03Z"
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Api\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-03T14:45:23.067Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "AcquisitionCreateDto.cs",
-              "DocumentMoniker": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Api\\Application\\Dto\\AcquisitionCreateDto.cs",
-              "RelativeDocumentMoniker": "Application\\Dto\\AcquisitionCreateDto.cs",
-              "ToolTip": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Api\\Application\\Dto\\AcquisitionCreateDto.cs",
-              "RelativeToolTip": "Application\\Dto\\AcquisitionCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T03:11:20.694Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Api\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Api\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Api\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T02:44:06.268Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Api\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Api\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-02T02:44:05.255Z"
+              "WhenOpened": "2025-12-03T14:45:19.109Z",
+              "EditorCaption": ""
             }
           ]
         },

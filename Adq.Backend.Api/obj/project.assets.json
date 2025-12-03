@@ -722,6 +722,22 @@
           }
         }
       },
+      "Swashbuckle.AspNetCore.Annotations/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Swashbuckle.AspNetCore.SwaggerGen": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Swashbuckle.AspNetCore.Annotations.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Swashbuckle.AspNetCore.Annotations.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Swashbuckle.AspNetCore.Swagger/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -2036,6 +2052,27 @@
         "packageIcon.png"
       ]
     },
+    "Swashbuckle.AspNetCore.Annotations/8.0.0": {
+      "sha512": "hQVL993wTHpeYQbWoMAU7K6Fn8ewtQ9BpEfyJL0TR2Ra1oealHle9424PSETdUPKEL+wbuyN4z9uxYLBRouVpQ==",
+      "type": "package",
+      "path": "swashbuckle.aspnetcore.annotations/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net8.0/Swashbuckle.AspNetCore.Annotations.dll",
+        "lib/net8.0/Swashbuckle.AspNetCore.Annotations.pdb",
+        "lib/net8.0/Swashbuckle.AspNetCore.Annotations.xml",
+        "lib/net9.0/Swashbuckle.AspNetCore.Annotations.dll",
+        "lib/net9.0/Swashbuckle.AspNetCore.Annotations.pdb",
+        "lib/net9.0/Swashbuckle.AspNetCore.Annotations.xml",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.Annotations.dll",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.Annotations.pdb",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.Annotations.xml",
+        "package-readme.md",
+        "swashbuckle.aspnetcore.annotations.8.0.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.annotations.nuspec"
+      ]
+    },
     "Swashbuckle.AspNetCore.Swagger/8.0.0": {
       "sha512": "+8Y4pVTWbnzotIk6d6rcwsHGpCchPDqqrvYkyGlI3go+pFaKM+4eX30iCyI0hvr0RMtObJCFhK6aDtlQFbEF1g==",
       "type": "package",
@@ -2449,6 +2486,7 @@
       "Microsoft.Data.SqlClient >= 6.0.1",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.0",
+      "Swashbuckle.AspNetCore.Annotations >= 8.0.0",
       "Swashbuckle.AspNetCore.SwaggerGen >= 8.0.0",
       "Swashbuckle.AspNetCore.SwaggerUI >= 8.0.0"
     ]
@@ -2460,11 +2498,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Api\\Adq.Backend.Api.csproj",
+      "projectUniqueName": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Api\\Adq.Backend.Api.csproj",
       "projectName": "Adq.Backend.Api",
-      "projectPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Api\\Adq.Backend.Api.csproj",
+      "projectPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Api\\Adq.Backend.Api.csproj",
       "packagesPath": "C:\\Users\\SirGohan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Api\\obj\\",
+      "outputPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2485,11 +2523,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj": {
-              "projectPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj"
+            "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj": {
+              "projectPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj"
             },
-            "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Infrastructure\\Adq.Backend.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Infrastructure\\Adq.Backend.Infrastructure.csproj"
+            "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Infrastructure\\Adq.Backend.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Infrastructure\\Adq.Backend.Infrastructure.csproj"
             }
           }
         }
@@ -2529,6 +2567,10 @@
             "version": "[8.0.0, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
+            "target": "Package",
+            "version": "[8.0.0, )"
+          },
+          "Swashbuckle.AspNetCore.Annotations": {
             "target": "Package",
             "version": "[8.0.0, )"
           },

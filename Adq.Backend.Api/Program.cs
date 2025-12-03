@@ -1,15 +1,9 @@
-using System;
-using System.IO;
-using System.Text.Json;
 using Adq.Backend.Api.Application.Services;
 using Adq.Backend.Domain.Ports;
 using Adq.Backend.Infrastructure.DbContexts;
 using Adq.Backend.Infrastructure.Repositories;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using Swashbuckle.AspNetCore.SwaggerUI;
+using System.Text.Json;
 
 // Programa principal de la API
 // --------------------------------------------------
@@ -36,13 +30,17 @@ Directory.CreateDirectory(Path.GetDirectoryName(dataPath)!);
 // Registrar servicios y middlewares básicos
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.EnableAnnotations();
+});
 
 // Políticas CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowLocal", p => p.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 });
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngular",

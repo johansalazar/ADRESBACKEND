@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj": {}
+    "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj": {
+    "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj",
         "projectName": "Adq.Backend.Domain",
-        "projectPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj",
+        "projectPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj",
         "packagesPath": "C:\\Users\\SirGohan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Domain\\obj\\",
+        "outputPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

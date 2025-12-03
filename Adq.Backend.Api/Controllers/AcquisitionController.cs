@@ -5,6 +5,7 @@ using Adq.Backend.Domain.Ports;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace Adq.Backend.Api.Controllers
 {
@@ -25,6 +26,13 @@ namespace Adq.Backend.Api.Controllers
         }
 
         [HttpGet]
+        [SwaggerOperation(
+           Summary = "Obtiene todas las adquisiciones",
+           Description = "Retorna la lista de adquisiciones ordenadas por fecha de creación descendente"
+       )]
+        [SwaggerResponse(StatusCodes.Status200OK, "Lista de adquisiciones obtenida correctamente", typeof(ResponseApi<IEnumerable<Acquisition>>))]
+        [SwaggerResponse(StatusCodes.Status500InternalServerError, "Error interno al obtener las adquisiciones", typeof(ResponseApi<string>))]
+     
         public async Task<ActionResult<ResponseApi<IEnumerable<Acquisition>>>> GetAll()
         {
             try
@@ -40,6 +48,14 @@ namespace Adq.Backend.Api.Controllers
         }
 
         [HttpGet("{id:guid}")]
+        [SwaggerOperation(
+                  Summary = "Obtiene una adquisición por ID",
+                  Description = "Retorna los datos de una adquisición específica según su ID"
+              )]
+        [SwaggerResponse(StatusCodes.Status200OK, "Adquisición encontrada", typeof(ResponseApi<Acquisition>))]
+        [SwaggerResponse(StatusCodes.Status404NotFound, "No se encontró la adquisición", typeof(ResponseApi<string>))]
+        [SwaggerResponse(StatusCodes.Status500InternalServerError, "Error interno al obtener la adquisición", typeof(ResponseApi<string>))]
+
         public async Task<ActionResult<ResponseApi<Acquisition>>> GetById(Guid id)
         {
             try
@@ -58,6 +74,13 @@ namespace Adq.Backend.Api.Controllers
         }
 
         [HttpGet("{id:guid}/history")]
+        [SwaggerOperation(
+               Summary = "Obtiene el historial de una adquisición",
+               Description = "Retorna los registros históricos asociados a una adquisición específica"
+           )]
+        [SwaggerResponse(StatusCodes.Status200OK, "Historial obtenido correctamente", typeof(ResponseApi<IEnumerable<HistoryEntry>>))]
+        [SwaggerResponse(StatusCodes.Status500InternalServerError, "Error interno al obtener el historial", typeof(ResponseApi<string>))]
+
         public async Task<ActionResult<ResponseApi<IEnumerable<HistoryEntry>>>> GetHistory(Guid id)
         {
             try
@@ -73,6 +96,14 @@ namespace Adq.Backend.Api.Controllers
         }
 
         [HttpPost]
+        [SwaggerOperation(
+                Summary = "Crea una nueva adquisición",
+                Description = "Crea una adquisición en el sistema y registra su historial de inserción"
+            )]
+        [SwaggerResponse(StatusCodes.Status201Created, "Adquisición creada correctamente", typeof(ResponseApi<Acquisition>))]
+        [SwaggerResponse(StatusCodes.Status400BadRequest, "Datos inválidos para crear la adquisición", typeof(ResponseApi<string>))]
+        [SwaggerResponse(StatusCodes.Status500InternalServerError, "Error interno al crear la adquisición", typeof(ResponseApi<string>))]
+
         public async Task<ActionResult<ResponseApi<Acquisition>>> Create([FromBody] AcquisitionCreateDto dto)
         {
             try
@@ -117,6 +148,15 @@ namespace Adq.Backend.Api.Controllers
         }
 
         [HttpPut("{id:guid}")]
+        [SwaggerOperation(
+            Summary = "Actualiza una adquisición existente",
+            Description = "Actualiza los datos de una adquisición y registra el historial de modificación"
+        )]
+        [SwaggerResponse(StatusCodes.Status200OK, "Adquisición actualizada correctamente", typeof(ResponseApi<string>))]
+        [SwaggerResponse(StatusCodes.Status400BadRequest, "Datos inválidos para actualizar la adquisición", typeof(ResponseApi<string>))]
+        [SwaggerResponse(StatusCodes.Status404NotFound, "No se encontró la adquisición", typeof(ResponseApi<string>))]
+        [SwaggerResponse(StatusCodes.Status500InternalServerError, "Error interno al actualizar la adquisición", typeof(ResponseApi<string>))]
+
         public async Task<ActionResult<ResponseApi<string>>> Update(Guid id, [FromBody] AcquisitionUpdateDto dto)
         {
             try
@@ -183,6 +223,14 @@ namespace Adq.Backend.Api.Controllers
         }
 
         [HttpDelete("{id:guid}")]
+        [SwaggerOperation(
+            Summary = "Elimina una adquisición",
+            Description = "Desactiva una adquisición y registra el historial de eliminación"
+        )]
+        [SwaggerResponse(StatusCodes.Status200OK, "Adquisición eliminada correctamente", typeof(ResponseApi<string>))]
+        [SwaggerResponse(StatusCodes.Status404NotFound, "No se encontró la adquisición", typeof(ResponseApi<string>))]
+        [SwaggerResponse(StatusCodes.Status500InternalServerError, "Error interno al eliminar la adquisición", typeof(ResponseApi<string>))]
+
         public async Task<ActionResult<ResponseApi<string>>> Delete(Guid id)
         {
             try

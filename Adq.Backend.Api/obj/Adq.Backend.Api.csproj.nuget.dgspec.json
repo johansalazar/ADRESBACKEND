@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Api\\Adq.Backend.Api.csproj": {}
+    "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Api\\Adq.Backend.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Api\\Adq.Backend.Api.csproj": {
+    "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Api\\Adq.Backend.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Api\\Adq.Backend.Api.csproj",
+        "projectUniqueName": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Api\\Adq.Backend.Api.csproj",
         "projectName": "Adq.Backend.Api",
-        "projectPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Api\\Adq.Backend.Api.csproj",
+        "projectPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Api\\Adq.Backend.Api.csproj",
         "packagesPath": "C:\\Users\\SirGohan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Api\\obj\\",
+        "outputPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,11 +32,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj": {
-                "projectPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj"
+              "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj": {
+                "projectPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj"
               },
-              "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Infrastructure\\Adq.Backend.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Infrastructure\\Adq.Backend.Infrastructure.csproj"
+              "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Infrastructure\\Adq.Backend.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Infrastructure\\Adq.Backend.Infrastructure.csproj"
               }
             }
           }
@@ -76,6 +76,10 @@
               "version": "[8.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Swashbuckle.AspNetCore.Annotations": {
               "target": "Package",
               "version": "[8.0.0, )"
             },
@@ -531,14 +535,14 @@
         }
       }
     },
-    "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj": {
+    "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj",
         "projectName": "Adq.Backend.Domain",
-        "projectPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj",
+        "projectPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj",
         "packagesPath": "C:\\Users\\SirGohan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Domain\\obj\\",
+        "outputPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -878,14 +882,14 @@
         }
       }
     },
-    "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Infrastructure\\Adq.Backend.Infrastructure.csproj": {
+    "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Infrastructure\\Adq.Backend.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Infrastructure\\Adq.Backend.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Infrastructure\\Adq.Backend.Infrastructure.csproj",
         "projectName": "Adq.Backend.Infrastructure",
-        "projectPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Infrastructure\\Adq.Backend.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Infrastructure\\Adq.Backend.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\SirGohan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -906,8 +910,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj": {
-                "projectPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj"
+              "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj": {
+                "projectPath": "C:\\Users\\SirGohan\\source\\repos\\adquisicionesApp\\ADRESBACKEND\\Adq.Backend.Domain\\Adq.Backend.Domain.csproj"
               }
             }
           }
