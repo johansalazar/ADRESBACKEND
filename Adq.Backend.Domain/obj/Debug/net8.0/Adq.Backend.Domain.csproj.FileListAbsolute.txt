@@ -1,0 +1,11 @@
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Domain\bin\Debug\net8.0\Adq.Backend.Domain.deps.json
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Domain\bin\Debug\net8.0\Adq.Backend.Domain.dll
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Domain\bin\Debug\net8.0\Adq.Backend.Domain.pdb
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Domain\obj\Debug\net8.0\Adq.Backend.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Domain\obj\Debug\net8.0\Adq.Backend.Domain.AssemblyInfoInputs.cache
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Domain\obj\Debug\net8.0\Adq.Backend.Domain.AssemblyInfo.cs
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Domain\obj\Debug\net8.0\Adq.Backend.Domain.csproj.CoreCompileInputs.cache
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Domain\obj\Debug\net8.0\Adq.Backend.Domain.dll
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Domain\obj\Debug\net8.0\refint\Adq.Backend.Domain.dll
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Domain\obj\Debug\net8.0\Adq.Backend.Domain.pdb
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Domain\obj\Debug\net8.0\ref\Adq.Backend.Domain.dll

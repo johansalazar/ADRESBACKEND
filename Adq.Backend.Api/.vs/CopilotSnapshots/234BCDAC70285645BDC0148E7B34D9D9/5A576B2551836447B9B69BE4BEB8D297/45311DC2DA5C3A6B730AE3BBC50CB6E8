@@ -1,0 +1,90 @@
+﻿using Adq.Backend.Api.Application.Services;
+using Adq.Backend.Domain.Ports;
+using Adq.Backend.Infrastructure.DbContexts;
+using Adq.Backend.Infrastructure.Repositories;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.SwaggerGen;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Connection
+var conn = builder.Configuration.GetConnectionString("SqlServer");
+builder.Services.AddDbContext<AcquisitionDbContext>(options => options.UseSqlServer(conn));
+
+// DATA PATH
+var dataPath = Path.Combine(builder.Environment.ContentRootPath, "data", "acquisitions.jsonl");
+Directory.CreateDirectory(Path.GetDirectoryName(dataPath)!);
+
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowLocal", p => p.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+});
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngular",
+        p => p
+            .WithOrigins("http://localhost:4200")
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials());
+});
+
+// DI: register repositories and service
+// File repository as singleton (keeps same file path instance)
+builder.Services.AddSingleton<FileAcquisitionRepository>(new FileAcquisitionRepository(dataPath));
+
+// SQL repo as scoped
+builder.Services.AddScoped<SqlServerAcquisitionRepository>();
+
+// Provide IAcquisitionRepository default to SQL repo for other consumers
+builder.Services.AddScoped<IAcquisitionRepository>(sp => sp.GetRequiredService<SqlServerAcquisitionRepository>());
+
+// Service that requires both concrete implementations
+builder.Services.AddScoped<AcquisitionService>();
+
+var app = builder.Build();
+
+app.UseCors("AllowLocal");
+app.UseCors("AllowAngular");
+EnsureDatabaseCreatedAndMigrate(app);
+
+// Configure the HTTP request pipeline.
+// Enable Swagger and Swagger UI so it's available as soon as the app starts.
+// Set RoutePrefix = string.Empty to serve the UI at the application root (/).
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Adq Backend API V1");
+    c.RoutePrefix = string.Empty; // Serve Swagger UI at application root
+});
+
+if (app.Environment.IsDevelopment())
+{
+    // Development-specific middleware can remain here if needed
+}
+
+app.UseHttpsRedirection();
+app.UseAuthorization();
+app.MapControllers();
+app.Run();
+
+// Ensure DB is migrated on startup
+static void EnsureDatabaseCreatedAndMigrate(IApplicationBuilder app)
+{
+    using var scope = app.ApplicationServices.CreateScope();
+    var context = scope.ServiceProvider.GetRequiredService<AcquisitionDbContext>();
+    try
+    {
+        context.Database.Migrate();
+        Console.WriteLine("Database migrated successfully.");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error migrating database: {ex.Message}");
+    }
+}

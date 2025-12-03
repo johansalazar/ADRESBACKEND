@@ -1,0 +1,68 @@
+﻿using Adq.Backend.Api.Application.Dto;
+using Adq.Backend.Api.Application.Services;
+using Adq.Backend.Domain.Models;
+using Adq.Backend.Domain.Ports;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Adq.Backend.Api.Controllers
+{
+
+    [ApiController]
+    [Route("api/[controller]")]
+    public class AcquisitionController : ControllerBase
+    {
+        private readonly AcquisitionService _service;
+        private readonly IAcquisitionRepository _repo;
+
+        public AcquisitionController(AcquisitionService service, IAcquisitionRepository repo)
+        {
+            _service = service;
+            _repo = repo;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Acquisition>>> GetAll()
+        {
+            var list = await _repo.GetAllAsync();
+            return Ok(list.OrderByDescending(x => x.CreatedAt));
+        }
+
+        [HttpGet("{id:guid}")]
+        public async Task<ActionResult<Acquisition>> GetById(Guid id)
+        {
+            var a = await _repo.GetByIdAsync(id);
+            return a == null ? NotFound() : Ok(a);
+        }
+
+        [HttpGet("{id:guid}/history")]
+        public async Task<ActionResult<IEnumerable<HistoryEntry>>> GetHistory(Guid id)
+        {
+            var h = await _repo.GetHistoryAsync(id);
+            return Ok(h);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Acquisition>> Create([FromBody] AcquisitionCreateDto dto)
+        {
+            var created = await _service.CreateAsync(dto);
+            return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+        }
+
+        [HttpPut("{id:guid}")]
+        public async Task<IActionResult> Update(Guid id, [FromBody] AcquisitionUpdateDto dto)
+        {
+            var exists = await _repo.GetByIdAsync(id);
+            if (exists == null) return NotFound();
+
+            await _service.UpdateAsync(id, dto);
+            return NoContent();
+        }
+
+        [HttpDelete("{id:guid}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            await _service.DeactivateAsync(id, "Eliminado via API");
+            return NoContent();
+        }
+    }
+}

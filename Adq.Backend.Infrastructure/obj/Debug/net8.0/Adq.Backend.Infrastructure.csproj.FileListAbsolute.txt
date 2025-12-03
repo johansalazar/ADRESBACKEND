@@ -1,0 +1,17 @@
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Infrastructure\bin\Debug\net8.0\Adq.Backend.Infrastructure.deps.json
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Infrastructure\bin\Debug\net8.0\Adq.Backend.Infrastructure.runtimeconfig.json
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Infrastructure\bin\Debug\net8.0\Adq.Backend.Infrastructure.dll
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Infrastructure\bin\Debug\net8.0\Adq.Backend.Infrastructure.pdb
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Infrastructure\bin\Debug\net8.0\Adq.Backend.Domain.dll
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Infrastructure\bin\Debug\net8.0\Adq.Backend.Domain.pdb
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Infrastructure\obj\Debug\net8.0\Adq.Backend.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Infrastructure\obj\Debug\net8.0\Adq.Backend.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Infrastructure\obj\Debug\net8.0\Adq.Backend.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Infrastructure\obj\Debug\net8.0\Adq.Backend.Infrastructure.AssemblyInfo.cs
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Infrastructure\obj\Debug\net8.0\Adq.Backend.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Infrastructure\obj\Debug\net8.0\Adq.Back.845E2198.Up2Date
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Infrastructure\obj\Debug\net8.0\Adq.Backend.Infrastructure.dll
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Infrastructure\obj\Debug\net8.0\refint\Adq.Backend.Infrastructure.dll
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Infrastructure\obj\Debug\net8.0\Adq.Backend.Infrastructure.pdb
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Infrastructure\obj\Debug\net8.0\Adq.Backend.Infrastructure.genruntimeconfig.cache
+C:\Users\SirGohan\source\repos\adquisicionesApp\Adq.Backend.Infrastructure\obj\Debug\net8.0\ref\Adq.Backend.Infrastructure.dll

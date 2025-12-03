@@ -1,0 +1,34 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Configuration;
+using System;
+using System.IO;
+
+namespace Adq.Backend.Infrastructure.DbContexts
+{
+    public class AcquisitionDbContextFactory : IDesignTimeDbContextFactory<AcquisitionDbContext>
+    {
+        public AcquisitionDbContext CreateDbContext(string[] args)
+        {
+            var builder = new DbContextOptionsBuilder<AcquisitionDbContext>();
+
+            // Build configuration from current directory (appsettings.json) + env vars
+            var basePath = Directory.GetCurrentDirectory();
+            var configBuilder = new ConfigurationBuilder()
+                .SetBasePath(basePath)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: false)
+                .AddEnvironmentVariables();
+
+            var config = configBuilder.Build();
+
+            // Priority: environment variable -> appsettings -> fallback LocalDB
+            var connectionString = Environment.GetEnvironmentVariable("ACQ_CONNECTION")
+                                   ?? config.GetConnectionString("SqlServer")
+                                   ?? "Server=DESKTOP-UPMOAKB;Database=ADRES;User Id=smartadmin;Password=smartadmin;TrustServerCertificate=False;Integrated Security=True;Encrypt=False;";
+
+            builder.UseSqlServer(connectionString);
+
+            return new AcquisitionDbContext(builder.Options);
+        }
+    }
+}

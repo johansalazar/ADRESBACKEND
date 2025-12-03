@@ -1,0 +1,47 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Configuration;
+using System;
+using System.IO;
+
+namespace Adq.Backend.Infrastructure.DbContexts
+{
+    public class AcquisitionDbContextFactory : IDesignTimeDbContextFactory<AcquisitionDbContext>
+    {
+        public AcquisitionDbContext CreateDbContext(string[] args)
+        {
+            var builder = new DbContextOptionsBuilder<AcquisitionDbContext>();
+
+            // Find appsettings.json by walking up the directory tree so migrations work when
+            // invoked from the Infrastructure project folder or solution root.
+            var current = new DirectoryInfo(Directory.GetCurrentDirectory());
+            string basePath = current.FullName;
+            while (current != null)
+            {
+                var candidate = Path.Combine(current.FullName, "appsettings.json");
+                if (File.Exists(candidate))
+                {
+                    basePath = current.FullName;
+                    break;
+                }
+                current = current.Parent;
+            }
+
+            var configBuilder = new ConfigurationBuilder()
+                .SetBasePath(basePath)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: false)
+                .AddEnvironmentVariables();
+
+            var config = configBuilder.Build();
+
+            // Priority: environment variable -> appsettings -> fallback (provided connection string)
+            var connectionString = Environment.GetEnvironmentVariable("ACQ_CONNECTION")
+                                   ?? config.GetConnectionString("SqlServer")
+                                   ?? "Server=DESKTOP-UPMOAKB;Database=ADRES;User Id=smartadmin;Password=smartadmin;TrustServerCertificate=False;Integrated Security=True;Encrypt=False;";
+
+            builder.UseSqlServer(connectionString);
+
+            return new AcquisitionDbContext(builder.Options);
+        }
+    }
+}

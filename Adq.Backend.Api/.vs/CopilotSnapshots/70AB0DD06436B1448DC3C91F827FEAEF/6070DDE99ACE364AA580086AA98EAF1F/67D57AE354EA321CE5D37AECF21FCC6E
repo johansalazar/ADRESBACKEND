@@ -1,0 +1,6 @@
+﻿namespace Adq.Backend.Api.Application.Dto
+{
+    public class AcquisitionUpdateDto : AcquisitionCreateDto
+    {
+    }
+}

@@ -1,0 +1,123 @@
+﻿using Adq.Backend.Api.Application.Dto;
+using Adq.Backend.Domain.Models;
+using Adq.Backend.Domain.Ports;
+using Adq.Backend.Infrastructure.Repositories;
+using Microsoft.Extensions.Logging;
+using System;
+
+namespace Adq.Backend.Api.Application.Services
+{
+    public class AcquisitionService
+    {
+        private readonly SqlServerAcquisitionRepository _mainRepo;    // SQL Server
+        private readonly FileAcquisitionRepository _backupRepo;  // File JSON
+        private readonly ILogger<AcquisitionService> _logger;
+
+        public AcquisitionService(SqlServerAcquisitionRepository mainRepo,
+            FileAcquisitionRepository backupRepo,
+            ILogger<AcquisitionService> logger)
+        {
+            _mainRepo = mainRepo;
+            _backupRepo = backupRepo;
+            _logger = logger;
+        }
+
+        public async Task<Acquisition> CreateAsync(AcquisitionCreateDto dto)
+        {
+            try
+            {
+                ValidateDto(dto);
+                var a = new Acquisition
+                {
+                    Budget = dto.Budget,
+                    Unit = dto.Unit,
+                    Type = dto.Type,
+                    Quantity = dto.Quantity,
+                    UnitValue = dto.UnitValue,
+                    AcquisitionDate = dto.AcquisitionDate,
+                    Supplier = dto.Supplier,
+                    Documentation = dto.Documentation,
+                    Active = true,
+                    CreatedAt = DateTime.UtcNow
+                };
+
+                // guardar SQL (main) y archivo (backup)
+                await _mainRepo.SaveAsync(a);
+                await _backupRepo.SaveAsync(a);
+
+                return a;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error al crear adquisición.");
+                throw; // relanzar para que el controlador lo maneje y devuelva la respuesta adecuada
+            }
+        }
+
+        public async Task UpdateAsync(Guid id, AcquisitionUpdateDto dto)
+        {
+            try
+            {
+                ValidateDto(dto);
+                var existing = await _mainRepo.GetByIdAsync(id);
+                if (existing == null)
+                {
+                    existing = await _backupRepo.GetByIdAsync(id);
+                    if (existing == null)
+                    {
+                        throw new InvalidOperationException("Not found");
+                    }
+                }
+
+                existing.Budget = dto.Budget;
+                existing.Unit = dto.Unit;
+                existing.Type = dto.Type;
+                existing.Quantity = dto.Quantity;
+                existing.UnitValue = dto.UnitValue;
+                existing.AcquisitionDate = dto.AcquisitionDate;
+                existing.Supplier = dto.Supplier;
+                existing.Documentation = dto.Documentation;
+
+                await _mainRepo.SaveAsync(existing);
+                await _backupRepo.SaveAsync(existing);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error al actualizar adquisición {Id}.", id);
+                throw;
+            }
+        }
+
+        public async Task DeactivateAsync(Guid id, string reason)
+        {
+            try
+            {
+                var existing = await _mainRepo.GetByIdAsync(id);
+                if (existing == null)
+                {
+                    existing = await _backupRepo.GetByIdAsync(id);
+                    if (existing == null)
+                    {
+                        throw new InvalidOperationException("Not found");
+                    }
+                }
+
+                await _mainRepo.DeactivateAsync(id, reason);
+                await _backupRepo.DeactivateAsync(id, reason);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error al desactivar adquisición {Id}.", id);
+                throw;
+            }
+        }
+
+        private static void ValidateDto(AcquisitionCreateDto dto)
+        {
+            if (dto.Quantity <= 0) throw new ArgumentException("Quantity must be > 0");
+            if (dto.UnitValue < 0) throw new ArgumentException("UnitValue must be >= 0");
+            if (string.IsNullOrWhiteSpace(dto.Unit)) throw new ArgumentException("Unit is required");
+        }
+    }
+}
+

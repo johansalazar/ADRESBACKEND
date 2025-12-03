@@ -1,0 +1,95 @@
+﻿using Adq.Backend.Api.Application.Dto;
+using Adq.Backend.Domain.Models;
+using Adq.Backend.Domain.Ports;
+using Adq.Backend.Infrastructure.Repositories;
+using System;
+
+namespace Adq.Backend.Api.Application.Services
+{
+    public class AcquisitionService
+    {
+        private readonly SqlServerAcquisitionRepository _mainRepo;    // SQL Server
+        private readonly FileAcquisitionRepository _backupRepo;  // File JSON
+
+        public AcquisitionService(SqlServerAcquisitionRepository mainRepo,
+            FileAcquisitionRepository backupRepo)
+        {
+            _mainRepo = mainRepo;
+            _backupRepo = backupRepo;
+        }
+
+        public async Task<Acquisition> CreateAsync(AcquisitionCreateDto dto)
+        {
+            ValidateDto(dto);
+            var a = new Acquisition
+            {
+                Budget = dto.Budget,
+                Unit = dto.Unit,
+                Type = dto.Type,
+                Quantity = dto.Quantity,
+                UnitValue = dto.UnitValue,
+                AcquisitionDate = dto.AcquisitionDate,
+                Supplier = dto.Supplier,
+                Documentation = dto.Documentation,
+                Active = true,
+                CreatedAt = DateTime.UtcNow
+            };
+
+            // gurdar SQL (main) y archivo (backup)
+            await _mainRepo.SaveAsync(a);
+            await _backupRepo.SaveAsync(a);
+
+            return a;
+        }
+
+        public async Task UpdateAsync(Guid id, AcquisitionUpdateDto dto)
+        {
+            ValidateDto(dto);
+            var existing = await _mainRepo.GetByIdAsync(id);
+            if (existing == null)
+            {
+                existing = await _backupRepo.GetByIdAsync(id);
+                if (existing == null)
+                {
+                    throw new InvalidOperationException("Not found");
+                }
+            }
+
+            existing.Budget = dto.Budget;
+            existing.Unit = dto.Unit;
+            existing.Type = dto.Type;
+            existing.Quantity = dto.Quantity;
+            existing.UnitValue = dto.UnitValue;
+            existing.AcquisitionDate = dto.AcquisitionDate;
+            existing.Supplier = dto.Supplier;
+            existing.Documentation = dto.Documentation;
+
+            await _mainRepo.SaveAsync(existing);
+            await _backupRepo.SaveAsync(existing);
+        }
+
+        public async Task DeactivateAsync(Guid id, string reason)
+        {
+            var existing = await _mainRepo.GetByIdAsync(id);
+            if (existing == null)
+            {
+                existing = await _backupRepo.GetByIdAsync(id);
+                if (existing == null)
+                {
+                    throw new InvalidOperationException("Not found");
+                }
+            }
+
+            await _mainRepo.DeactivateAsync(id, reason);
+            await _backupRepo.DeactivateAsync(id, reason);
+        }
+
+        private static void ValidateDto(AcquisitionCreateDto dto)
+        {
+            if (dto.Quantity <= 0) throw new ArgumentException("Quantity must be > 0");
+            if (dto.UnitValue < 0) throw new ArgumentException("UnitValue must be >= 0");
+            if (string.IsNullOrWhiteSpace(dto.Unit)) throw new ArgumentException("Unit is required");
+        }
+    }
+}
+
