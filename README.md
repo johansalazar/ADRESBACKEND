@@ -182,4 +182,4 @@ Ejemplo:
 
 # ✨ Autor
 
-Generado automáticamente por ChatGPT.
+Generado automáticamente por Johan Ivan Salazar Santana.
